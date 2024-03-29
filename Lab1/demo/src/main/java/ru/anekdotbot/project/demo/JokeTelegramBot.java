@@ -68,7 +68,7 @@ public class JokeTelegramBot extends TelegramLongPollingBot{
 
     private void sendAllJokes(long chatId){
         StringBuilder messageText = new StringBuilder();
-        for(JokeData joke : jokeRepository.getAllJokes()){
+        for(JokeData joke : jokeRepository.findAll()){
             messageText.append(joke.getBody()).append("\n");
         }
 
